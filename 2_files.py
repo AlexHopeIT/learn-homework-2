@@ -16,7 +16,21 @@ def main():
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
+    with open('/home/alexhope/pythonProject/LP lessons/L3/referat.txt', 
+              'r', encoding='utf-8') as ref:
+        referat = ref.read()
+        lenght_text = len(referat)
+        print('Длина текста: ', lenght_text)
+
+        all_words = referat.split()
+        print('Всего слов в тексте: ', len(all_words))
+
+        referat2 = referat.replace('.', '!')
+        print('Исправленный текст: ', referat2)
+
+        with open('referat2.txt', 'w', encoding='utf-8') as ref2:
+            ref2.write(referat2)
+
 
 if __name__ == "__main__":
     main()
